@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+    --line-border-fill: #ff0000;
+    --line-border-empty: #383838;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#maincont {
+    text-align: center;
+}
+
+#under {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.under::before {
+    content: '';
+    position: absolute;
+    background-color: var(--line-border-empty);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress {
+    background-color:var(--line-border-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    width: 0%;
+    z-index: -1;
+    transition: .5s ease;
+}
+
+.nums {
+    background-color: #1f1f1f;
+    border: 3px solid var(--line-border-empty);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--fill-color);
+    transition: .5s ease;
+}
+.nums.active{
+    border-color:var(--line-border-fill);
+}
+
+h3{
+    color: var(--line-border-fill);
+    font-size: 10px ;
+}
+.btn {
+    width: 90px;
+    padding: 8px 20px;
+    margin:8px;
+    border-radius: 6px;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    border: none;
+    font-size: 14px;
+    background-color: var(--line-border-fill);
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:focus{
+    outline: 0;
+}
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
